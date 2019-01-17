@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: locations
+---
+testFramework: junit
+sourceLanguage: java

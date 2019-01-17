@@ -1,0 +1,31 @@
+micronaut:
+  application:
+    name: locations
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        step: PT1M
+        descriptions: true
+  server:
+    port: 8081
+mongodb:
+  uri: mongodb://localhost/gasStations
+consul:
+  client:
+    registration:
+      enabled: true
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+tracing:
+  zipkin:
+    http:
+      url: http://localhost:9411
+    enabled: false
+    sampler:
+      probability: 1
+endpoints:
+  metrics:
+    enabled: false
+  prometheus:
+    enabled: true

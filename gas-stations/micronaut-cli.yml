@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: gas.stations
+---
+testFramework: junit
+sourceLanguage: java

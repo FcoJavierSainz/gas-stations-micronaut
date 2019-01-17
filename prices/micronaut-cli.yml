@@ -1,0 +1,5 @@
+profile: service
+defaultPackage: prices
+---
+testFramework: junit
+sourceLanguage: java

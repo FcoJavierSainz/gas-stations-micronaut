@@ -1,0 +1,35 @@
+app:
+  maps:
+    api-key: AIzaSyCkDYP3ye_TvDi98VTiwI2NvVGTr_h1Dfc
+consul:
+  client:
+    defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"
+tracing:
+  zipkin:
+    http:
+      url: http://localhost:9411
+    enabled: true
+    sampler:
+      probability: 1
+endpoints:
+  metrics:
+    enabled: false
+  prometheus:
+    enabled: true
+micronaut:
+  metrics:
+    enabled: true
+    export:
+      prometheus:
+        enabled: true
+        step: PT1M
+        descriptions: true
+  application:
+    name: gas-stations
+  server:
+    port: 80
+  http:
+    services:
+      maps:
+        urls:
+          - https://maps.googleapis.com
