@@ -1,6 +1,6 @@
 app:
   maps:
-    api-key: AIzaSyCkDYP3ye_TvDi98VTiwI2NvVGTr_h1Dfc
+    api-key: <My Google maps key>
 consul:
   client:
     defaultZone: "${CONSUL_HOST:localhost}:${CONSUL_PORT:8500}"

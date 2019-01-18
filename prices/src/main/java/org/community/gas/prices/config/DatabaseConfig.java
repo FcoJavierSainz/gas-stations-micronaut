@@ -14,7 +14,6 @@ import io.micronaut.context.annotation.Value;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import javax.annotation.PostConstruct;
 import javax.inject.Singleton;
 import org.hibernate.engine.jdbc.connections.spi.ConnectionProvider;
 import org.hibernate.hikaricp.internal.HikariCPConnectionProvider;
@@ -48,8 +47,8 @@ public class DatabaseConfig {
     return new Database(settings, packages, configuration);
   }
 
-  //@Bean
-  //@Parallel
+  @Bean
+  @Parallel
   HikariDataSource registerHikariMetrics(Database database) {
     HikariCPConnectionProvider cp = (HikariCPConnectionProvider) database.getSessionFactory()
         .getSessionFactoryOptions().getServiceRegistry().
@@ -60,7 +59,7 @@ public class DatabaseConfig {
     return dataSource;
   }
 
-  //@Bean
+  @Bean
   HibernateMetrics metrics(Database database) {
     return new HibernateMetrics(database.getSessionFactory(), "mysql", Tags.empty());
   }

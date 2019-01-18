@@ -15,8 +15,7 @@ public class GasStationResources {
   @Inject
   GasStationApplicationService service;
 
-  @Get(value = "/near", produces = {MediaType.APPLICATION_JSON,
-      MediaType.APPLICATION_JSON_STREAM})
+  @Get(value = "/near", produces = {MediaType.APPLICATION_JSON_STREAM, MediaType.APPLICATION_JSON})
   public Publisher<GasStation> getLocationsNearTo(@QueryValue("longitude") double longitude,
       @QueryValue("latitude") double latitude,
       @QueryValue(value = "radio", defaultValue = "1000") int radio) {
